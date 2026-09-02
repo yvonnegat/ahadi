@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add a Promise — Ahadi</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/index.html">
+      <span class="brand__mark">A</span>
+      <span class="brand__text">
+        <h1>Ahadi</h1>
+        <div class="brand__tagline">Public Register of Promises</div>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/index.html">Register</a>
+      <a href="/learn.html">Know Your Rights</a>
+      <a href="/extract.html">Add a Promise</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap wrap--narrow">
+
+  <section class="hero" style="padding-top:32px;">
+    <p class="eyebrow">Admin — Promise Intake</p>
+    <h2>Enter a promise into the register</h2>
+    <p>
+      Paste a public statement — a speech excerpt, a manifesto line, a budget
+      document quote — and Ahadi's assistant will extract the structured
+      commitment: who promised what, where, and by when. You review and edit
+      before it's added.
+    </p>
+  </section>
+
+  <div class="panel">
+    <div class="panel__title">Step 1 — Source Text</div>
+    <div class="field">
+      <label for="source-text">Paste a public statement or document excerpt</label>
+      <textarea id="source-text" rows="5" placeholder="Our administration will construct a new health centre in Ward X before the end of 2027."></textarea>
+    </div>
+    <div class="actions-row">
+      <button id="extract-btn" class="btn">Extract Promise</button>
+    </div>
+    <div id="extract-status" class="status-msg"></div>
+  </div>
+
+  <div class="panel" id="review-panel" hidden>
+    <div class="panel__title">Step 2 — Review &amp; Complete the Record</div>
+    <form id="review-form">
+      <div class="picker" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="field"><label for="title">Project title</label><input type="text" id="title" required></div>
+        <div class="field"><label for="promised_by">Promised by</label><input type="text" id="promised_by"></div>
+        <div class="field"><label for="sector">Sector</label><input type="text" id="sector"></div>
+        <div class="field"><label for="deadline">Deadline</label><input type="text" id="deadline"></div>
+        <div class="field"><label for="county">County</label><input type="text" id="county" required></div>
+        <div class="field"><label for="constituency">Constituency</label><input type="text" id="constituency" required></div>
+        <div class="field"><label for="ward">Ward</label><input type="text" id="ward" required></div>
+        <div class="field"><label for="budget">Budget allocated (KSh)</label><input type="text" id="budget" placeholder="e.g. 40000000"></div>
+      </div>
+      <div class="field" style="margin-top:14px;">
+        <label for="description">Description</label>
+        <textarea id="description" rows="3"></textarea>
+      </div>
+      <div class="actions-row">
+        <button type="submit" class="btn">Add to Ahadi</button>
+      </div>
+      <div id="add-status" class="status-msg"></div>
+    </form>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>The assistant extracts a draft — it does not verify accuracy. Review every field before publishing.</span>
+    <span class="mono">v0.1 · demonstration data</span>
+  </div>
+</footer>
+
+<script src="/common.js"></script>
+<script src="/extract.js"></script>
+</body>
+</html>

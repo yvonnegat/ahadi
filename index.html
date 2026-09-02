@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahadi — Promised. Funded. Delivered?</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/index.html">
+      <span class="brand__mark">A</span>
+      <span class="brand__text">
+        <h1>Ahadi</h1>
+        <div class="brand__tagline">Public Register of Promises</div>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/index.html">Register</a>
+      <a href="/learn.html">Know Your Rights</a>
+      <a href="/extract.html">Add a Promise</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Civic Register — Not Corroborated Legal Testimony</p>
+    <h2>Promised. Funded. Delivered?</h2>
+    <p>
+      Every public promise on this register is tracked against what was funded,
+      what was reported complete, and what residents say is actually happening
+      on the ground. Nothing here accuses anyone of wrongdoing — it simply
+      records the evidence so you can judge for yourself.
+      <a href="/learn.html">Learn how to read a case file →</a>
+    </p>
+  </section>
+
+  <section>
+    <p class="eyebrow" style="margin-bottom:8px;">County-Wide Overview</p>
+    <div class="stat-strip" id="overview-stat-strip">
+      <div class="stat"><span class="stat__num">—</span><span class="stat__label">Loading…</span></div>
+    </div>
+  </section>
+
+  <section id="overview-detail" hidden>
+    <div class="charts-grid">
+      <div class="panel">
+        <div class="panel__title">Wards Needing Attention</div>
+        <table class="leaderboard" id="leaderboard-table"></table>
+      </div>
+      <div class="panel">
+        <div class="panel__title">Most-Flagged Case Files</div>
+        <div id="flagged-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule rule--strong">
+
+  <section>
+    <div class="panel">
+      <div class="panel__title">Locate a Ward</div>
+      <div class="picker">
+        <div class="field">
+          <label for="county-select">County</label>
+          <select id="county-select"><option value="">Loading…</option></select>
+        </div>
+        <div class="field">
+          <label for="constituency-select">Constituency</label>
+          <select id="constituency-select" disabled><option value="">Select county first</option></select>
+        </div>
+        <div class="field">
+          <label for="ward-select">Ward</label>
+          <select id="ward-select" disabled><option value="">Select constituency first</option></select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area-section" hidden>
+    <div class="eyebrow" id="area-eyebrow" style="margin-bottom:8px;">Your Area</div>
+    <div class="stat-strip" id="stat-strip"></div>
+  </section>
+
+  <section id="charts-section" hidden>
+    <div class="eyebrow" style="margin-bottom:8px;">Charts &amp; Trends</div>
+    <div class="charts-grid">
+      <div class="panel chart-panel">
+        <div class="panel__title">Allocation by Sector</div>
+        <canvas id="sector-chart" height="220"></canvas>
+      </div>
+      <div class="panel chart-panel">
+        <div class="panel__title">Citizen Reports — Last 8 Weeks</div>
+        <canvas id="trend-chart" height="220"></canvas>
+        <div class="chart-legend-note">Stacked by what residents reported: not started, ongoing, stalled, complete, mismatch.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="promises-section" hidden>
+    <h3 style="font-size:1.1rem;" class="eyebrow" id="promises-heading">Tracked Promises</h3>
+    <div class="case-list" id="case-list"></div>
+  </section>
+
+  <div id="status-msg" class="status-msg"></div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Ahadi is a citizen-run accountability register. Reports are community-submitted evidence, not verified fact.</span>
+    <span class="mono">v0.1 · demonstration data</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="/common.js"></script>
+<script src="/dashboard.js"></script>
+</body>
+</html>
